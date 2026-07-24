@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function EducationPage() {
   const services = [
@@ -42,30 +43,8 @@ export default function EducationPage() {
 
   return (
     <main className="bg-black text-white min-h-screen">
-      {/* 상단 네비게이션 */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold tracking-widest">
-            SKETCH<span className="text-amber-400">ON</span>
-          </Link>
-          <nav className="hidden md:flex gap-8 text-sm text-white/80">
-            <Link href="/education" className="text-amber-400">
-              교육서비스
-            </Link>
-            <Link href="/video" className="hover:text-amber-400 transition">
-              영상제작서비스
-            </Link>
-            <Link href="/about" className="hover:text-amber-400 transition">
-              회사소개
-            </Link>
-            <Link href="/#contact" className="hover:text-amber-400 transition">
-              문의하기
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header active="education" />
 
-      {/* 헤더 영역 */}
       <section className="pt-40 pb-20 px-6 text-center border-b border-white/10">
         <p className="text-amber-400 text-sm tracking-widest mb-3">
           EDUCATION
@@ -79,7 +58,6 @@ export default function EducationPage() {
         </p>
       </section>
 
-      {/* 서비스 목록 */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((item) => (
@@ -96,13 +74,12 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* 하단 CTA */}
       <section className="py-20 px-6 text-center border-t border-white/10">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
           우리 조직에 맞는 교육이 궁금하다면
         </h2>
         <Link
-          href="/#contact"
+          href="/contact"
           className="inline-block px-8 py-3 bg-amber-400 text-black font-semibold rounded-full hover:bg-amber-300 transition"
         >
           문의하기

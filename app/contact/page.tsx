@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "@/components/Header";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function ContactPage() {
@@ -45,30 +45,8 @@ export default function ContactPage() {
 
   return (
     <main className="bg-black text-white min-h-screen">
-      {/* 상단 네비게이션 */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold tracking-widest">
-            SKETCH<span className="text-amber-400">ON</span>
-          </Link>
-          <nav className="hidden md:flex gap-8 text-sm text-white/80">
-            <Link href="/education" className="hover:text-amber-400 transition">
-              교육서비스
-            </Link>
-            <Link href="/video" className="hover:text-amber-400 transition">
-              영상제작서비스
-            </Link>
-            <Link href="/about" className="hover:text-amber-400 transition">
-              회사소개
-            </Link>
-            <Link href="/contact" className="text-amber-400">
-              문의하기
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header active="contact" />
 
-      {/* 헤더 영역 */}
       <section className="pt-40 pb-16 px-6 text-center border-b border-white/10">
         <p className="text-amber-400 text-sm tracking-widest mb-3">CONTACT</p>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">
@@ -79,7 +57,6 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* 폼 영역 */}
       <section className="py-20 px-6">
         <div className="max-w-xl mx-auto">
           {status === "success" ? (

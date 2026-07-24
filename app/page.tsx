@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function Home() {
   const educationServices = [
@@ -27,28 +28,7 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white">
-      {/* 상단 네비게이션 */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <span className="text-xl font-bold tracking-widest">
-            SKETCH<span className="text-amber-400">ON</span>
-          </span>
-          <nav className="hidden md:flex gap-8 text-sm text-white/80">
-            <Link href="/education" className="hover:text-amber-400 transition">
-              교육서비스
-            </Link>
-            <Link href="/video" className="hover:text-amber-400 transition">
-              영상제작서비스
-            </Link>
-            <Link href="/about" className="hover:text-amber-400 transition">
-              회사소개
-            </Link>
-            <Link href="/contact" className="hover:text-amber-400 transition">
-              문의하기
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header active="home" />
 
       {/* 히어로 섹션 */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
@@ -163,7 +143,6 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 푸터 */}
       <footer className="py-8 px-6 border-t border-white/10 text-center text-white/40 text-sm">
         © {new Date().getFullYear()} SKETCH ON. All rights reserved.
       </footer>
