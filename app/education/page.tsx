@@ -55,6 +55,9 @@ export default function EducationPage() {
             <Link href="/video" className="hover:text-amber-400 transition">
               영상제작서비스
             </Link>
+            <Link href="/about" className="hover:text-amber-400 transition">
+              회사소개
+            </Link>
             <Link href="/#contact" className="hover:text-amber-400 transition">
               문의하기
             </Link>
