@@ -82,14 +82,15 @@ export default function AboutPage() {
               (SKETCH ON)
             </p>
             <p>
-              <span className="text-white/40 mr-4">대표</span>추후 입력
+              <span className="text-white/40 mr-4">대표</span>신홍석
             </p>
             <p>
-              <span className="text-white/40 mr-4">주소</span>추후 입력
+              <span className="text-white/40 mr-4">주소</span>
+              서울특별시 관악구 조원로 25, 101-2705
             </p>
             <p>
               <span className="text-white/40 mr-4">사업자등록번호</span>
-              추후 입력
+              330-31-01452
             </p>
             <p>
               <span className="text-white/40 mr-4">이메일</span>
