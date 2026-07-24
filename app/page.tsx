@@ -43,9 +43,9 @@ export default function Home() {
             <Link href="/about" className="hover:text-amber-400 transition">
               회사소개
             </Link>
-            <a href="#contact" className="hover:text-amber-400 transition">
+            <Link href="/contact" className="hover:text-amber-400 transition">
               문의하기
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -153,9 +153,14 @@ export default function Home() {
           함께 만들어갈 이야기를 기다립니다
         </h2>
         <p className="text-white/60 mb-8">
-          교육 및 영상제작 관련 문의는 아래 연락처로 부탁드립니다.
+          교육 및 영상제작 관련 문의는 언제든 편하게 남겨주세요.
         </p>
-        <p className="text-white/80">이메일: info@sketchon.co.kr</p>
+        <Link
+          href="/contact"
+          className="inline-block px-8 py-3 bg-amber-400 text-black font-semibold rounded-full hover:bg-amber-300 transition"
+        >
+          문의하기
+        </Link>
       </section>
 
       {/* 푸터 */}
