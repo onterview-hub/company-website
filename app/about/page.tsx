@@ -94,7 +94,7 @@ export default function AboutPage() {
             </p>
             <p>
               <span className="text-white/40 mr-4">이메일</span>
-              info@sketchon.co.kr
+              sketchon@sketchon.kr
             </p>
           </div>
         </div>
