@@ -31,8 +31,14 @@ export default function Home() {
       <Header active="home" />
 
       {/* 히어로 섹션 */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-neutral-900" />
+      <section
+        className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1677022689922-155f53a1f3f3?fm=jpg&q=80&w=2000&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-black" />
         <div className="relative z-10">
           <p className="text-amber-400 tracking-[0.3em] text-sm mb-6">
             SKETCH ON
