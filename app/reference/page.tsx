@@ -2,6 +2,11 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "레퍼런스",
+  description: "스케치온이 함께해온 교육 및 영상제작 프로젝트를 소개합니다.",
+};
+
 const references = [
   {
     slug: "sample-1",

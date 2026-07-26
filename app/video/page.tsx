@@ -2,6 +2,12 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "영상제작서비스",
+  description:
+    "강의영상, 행사·홍보영상, 브랜드필름, 웹드라마 등 스케치온의 영상제작 서비스를 소개합니다.",
+};
+
 export default function VideoPage() {
   const services = [
     { slug: "lecture", title: "강의 영상 제작" },

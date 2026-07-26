@@ -2,6 +2,12 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "회사소개",
+  description:
+    "교육과 영상제작으로 다음 장면을 함께 그리는 스케치온을 소개합니다.",
+};
+
 export default function AboutPage() {
   const values = [
     {

@@ -1,6 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "개인정보처리방침",
+  description: "스케치온의 개인정보처리방침을 안내합니다.",
+};
+
 export default function PrivacyPage() {
   return (
     <main className="bg-black text-white min-h-screen">

@@ -154,6 +154,19 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
+  return {
+    title: service?.title ?? "영상제작서비스",
+    description: service?.summary ?? "스케치온의 영상제작 서비스를 소개합니다.",
+  };
+}
+
 export default async function VideoDetailPage({
   params,
 }: {

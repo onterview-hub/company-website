@@ -2,6 +2,12 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "교육서비스",
+  description:
+    "AI교육, 진로교육, 취업역량 강화교육, 창업교육, 창직교육, 기업교육 등 스케치온의 교육 서비스를 소개합니다.",
+};
+
 export default function EducationPage() {
   const services = [
     { slug: "ai", title: "AI 교육" },

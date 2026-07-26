@@ -74,6 +74,19 @@ export function generateStaticParams() {
   return references.map((r) => ({ slug: r.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const item = references.find((r) => r.slug === slug);
+  return {
+    title: item?.title ?? "레퍼런스",
+    description: item?.description?.[0] ?? "스케치온의 프로젝트 사례를 소개합니다.",
+  };
+}
+
 export default async function ReferenceDetailPage({
   params,
 }: {
