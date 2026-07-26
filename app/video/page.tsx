@@ -3,42 +3,15 @@ import Header from "@/components/Header";
 
 export default function VideoPage() {
   const services = [
-    {
-      title: "강의 영상 제작",
-      desc: "온라인 강의, 교육 콘텐츠를 위한 전문 촬영 및 편집",
-    },
-    {
-      title: "행사·홍보 영상",
-      desc: "기업 행사, 세미나, 브랜드 홍보를 위한 임팩트 있는 영상",
-    },
-    {
-      title: "체험·현장실습 영상",
-      desc: "실습 현장의 생생한 순간을 담는 다큐멘터리형 영상",
-    },
-    {
-      title: "라이브 스트리밍",
-      desc: "실시간 행사 중계 및 온라인 라이브 방송 운영",
-    },
-    {
-      title: "웹드라마",
-      desc: "브랜드 메시지를 담은 스토리텔링 웹드라마 제작",
-    },
-    {
-      title: "브랜드 필름",
-      desc: "기업과 브랜드의 정체성을 담은 감성적인 브랜드 필름",
-    },
-    {
-      title: "인터뷰·다큐멘터리 영상",
-      desc: "인물과 이야기를 깊이 있게 담아내는 인터뷰/다큐 영상",
-    },
-    {
-      title: "소셜미디어 콘텐츠 영상",
-      desc: "숏폼 등 SNS 채널에 최적화된 콘텐츠 영상",
-    },
-    {
-      title: "사내방송·IR 영상",
-      desc: "내부 커뮤니케이션 및 투자자 대상 IR 영상 제작",
-    },
+    { slug: "lecture", title: "강의 영상 제작" },
+    { slug: "event", title: "행사·홍보 영상" },
+    { slug: "field-experience", title: "체험·현장실습 영상" },
+    { slug: "live", title: "라이브 스트리밍" },
+    { slug: "web-drama", title: "웹드라마" },
+    { slug: "brand-film", title: "브랜드 필름" },
+    { slug: "interview-documentary", title: "인터뷰·다큐멘터리 영상" },
+    { slug: "social-content", title: "소셜미디어 콘텐츠 영상" },
+    { slug: "internal-ir", title: "사내방송·IR 영상" },
   ];
 
   return (
@@ -61,15 +34,16 @@ export default function VideoPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((item) => (
-            <div
-              key={item.title}
-              className="border border-white/10 rounded-2xl p-8 hover:border-amber-400/50 hover:bg-white/5 transition"
+            <Link
+              key={item.slug}
+              href={`/video/${item.slug}`}
+              className="border border-white/10 rounded-2xl p-8 hover:border-amber-400/50 hover:bg-white/5 transition flex items-center justify-between"
             >
-              <h3 className="text-xl font-bold mb-3 text-amber-400">
+              <h3 className="text-xl font-bold text-amber-400">
                 {item.title}
               </h3>
-              <p className="text-white/60 leading-relaxed">{item.desc}</p>
-            </div>
+              <span className="text-white/40">→</span>
+            </Link>
           ))}
         </div>
       </section>

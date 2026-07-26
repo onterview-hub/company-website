@@ -6,6 +6,7 @@ import Link from "next/link";
 const links = [
   { href: "/education", label: "교육서비스", key: "education" },
   { href: "/video", label: "영상제작서비스", key: "video" },
+  { href: "/reference", label: "레퍼런스", key: "reference" },
   { href: "/about", label: "회사소개", key: "about" },
   { href: "/contact", label: "문의하기", key: "contact" },
 ];
