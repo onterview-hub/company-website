@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function ContactPage() {
@@ -148,9 +149,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <footer className="py-8 px-6 border-t border-white/10 text-center text-white/40 text-sm">
-        © {new Date().getFullYear()} SKETCH ON. All rights reserved.
-      </footer>
+      <Footer />
     </main>
   );
 }

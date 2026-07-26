@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const references = [
   {
@@ -76,9 +77,7 @@ export default function ReferencePage() {
         </Link>
       </section>
 
-      <footer className="py-8 px-6 border-t border-white/10 text-center text-white/40 text-sm">
-        © {new Date().getFullYear()} SKETCH ON. All rights reserved.
-      </footer>
+      <Footer />
     </main>
   );
 }
