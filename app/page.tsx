@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 
 export default function Home() {
   const educationServices = [
@@ -40,6 +41,7 @@ export default function Home() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black" />
+        <Stars count={70} />
         <div className="relative z-10">
           <p className="text-amber-400 tracking-[0.3em] text-sm mb-6">
             SKETCH ON
