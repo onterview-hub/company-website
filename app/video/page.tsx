@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 
 export const metadata = {
   title: "영상제작서비스",
@@ -25,17 +26,20 @@ export default function VideoPage() {
     <main className="bg-black text-white min-h-screen">
       <Header active="video" />
 
-      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10">
-        <p className="text-amber-400 text-sm tracking-widest mb-3">
-          VIDEO PRODUCTION
-        </p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">
-          이야기를 완성하는 영상
-        </h1>
-        <p className="text-white/60 max-w-2xl mx-auto">
-          강의 영상부터 행사, 다큐멘터리, 웹드라마까지.
-          스케치온은 기획부터 촬영, 편집까지 완성도 높은 영상을 제작합니다.
-        </p>
+      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">
+            VIDEO PRODUCTION
+          </p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+            이야기를 완성하는 영상
+          </h1>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            강의 영상부터 행사, 다큐멘터리, 웹드라마까지.
+            스케치온은 기획부터 촬영, 편집까지 완성도 높은 영상을 제작합니다.
+          </p>
+        </div>
       </section>
 
       <section className="py-20 px-6">

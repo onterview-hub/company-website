@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 
 export const metadata = {
   title: "개인정보처리방침",
@@ -11,14 +12,17 @@ export default function PrivacyPage() {
     <main className="bg-black text-white min-h-screen">
       <Header />
 
-      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10">
-        <p className="text-amber-400 text-sm tracking-widest mb-3">
-          PRIVACY POLICY
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          개인정보처리방침
-        </h1>
-        <p className="text-white/50 text-sm">시행일자: 2026년 7월 25일</p>
+      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">
+            PRIVACY POLICY
+          </p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            개인정보처리방침
+          </h1>
+          <p className="text-white/50 text-sm">시행일자: 2026년 7월 25일</p>
+        </div>
       </section>
 
       <section className="py-20 px-6">

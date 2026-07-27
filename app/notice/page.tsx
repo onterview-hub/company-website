@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 import { supabase } from "@/lib/supabaseClient";
 
 type Notice = {
@@ -31,12 +32,15 @@ export default function NoticePage() {
     <main className="bg-black text-white min-h-screen">
       <Header active="notice" />
 
-      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10">
-        <p className="text-amber-400 text-sm tracking-widest mb-3">NOTICE</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">공지사항</h1>
-        <p className="text-white/60 max-w-2xl mx-auto">
-          스케치온의 새로운 소식을 전해드립니다.
-        </p>
+      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">NOTICE</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">공지사항</h1>
+          <p className="text-white/60 max-w-2xl mx-auto">
+            스케치온의 새로운 소식을 전해드립니다.
+          </p>
+        </div>
       </section>
 
       <section className="py-20 px-6">

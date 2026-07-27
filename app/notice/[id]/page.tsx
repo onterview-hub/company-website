@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 import { supabase } from "@/lib/supabaseClient";
 
 type Notice = {
@@ -36,8 +37,9 @@ export default function NoticeDetailPage() {
     <main className="bg-black text-white min-h-screen">
       <Header active="notice" />
 
-      <section className="pt-40 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
+      <section className="pt-40 pb-16 px-6 relative overflow-hidden">
+        <Stars count={30} sparkleCount={3} />
+        <div className="max-w-3xl mx-auto relative z-10">
           {loading && <p className="text-white/40 text-center py-10">불러오는 중...</p>}
           {!loading && !notice && (
             <p className="text-white/40 text-center py-10">

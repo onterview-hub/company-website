@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 
 const references = [
   {
@@ -101,14 +102,17 @@ export default async function ReferenceDetailPage({
     <main className="bg-black text-white min-h-screen">
       <Header active="reference" />
 
-      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10">
-        <span className="inline-block text-xs px-3 py-1 border border-amber-400/40 text-amber-400 rounded-full mb-4">
-          {item.category}
-        </span>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">{item.title}</h1>
-        <p className="text-white/50 text-sm">
-          {item.client} · {item.period}
-        </p>
+      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <span className="inline-block text-xs px-3 py-1 border border-amber-400/40 text-amber-400 rounded-full mb-4">
+            {item.category}
+          </span>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">{item.title}</h1>
+          <p className="text-white/50 text-sm">
+            {item.client} · {item.period}
+          </p>
+        </div>
       </section>
 
       <section className="py-20 px-6">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function ContactPage() {
@@ -48,14 +49,17 @@ export default function ContactPage() {
     <main className="bg-black text-white min-h-screen">
       <Header active="contact" />
 
-      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10">
-        <p className="text-amber-400 text-sm tracking-widest mb-3">CONTACT</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">
-          함께 만들어갈 이야기를 기다립니다
-        </h1>
-        <p className="text-white/60 max-w-xl mx-auto">
-          교육 및 영상제작 관련 문의를 남겨주시면 빠르게 연락드리겠습니다.
-        </p>
+      <section className="pt-40 pb-16 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">CONTACT</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+            함께 만들어갈 이야기를 기다립니다
+          </h1>
+          <p className="text-white/60 max-w-xl mx-auto">
+            교육 및 영상제작 관련 문의를 남겨주시면 빠르게 연락드리겠습니다.
+          </p>
+        </div>
       </section>
 
       <section className="py-20 px-6">

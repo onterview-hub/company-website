@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Stars from "@/components/Stars";
 
 export const metadata = {
   title: "회사소개",
@@ -28,16 +29,19 @@ export default function AboutPage() {
     <main className="bg-black text-white min-h-screen">
       <Header active="about" />
 
-      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10">
-        <p className="text-amber-400 text-sm tracking-widest mb-3">ABOUT</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">
-          스케치온을 소개합니다
-        </h1>
-        <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
-          스케치온은 교육과 영상제작이라는 두 가지 언어로,
-          <br className="hidden md:block" />
-          사람과 조직이 다음 장면으로 나아갈 수 있도록 돕는 회사입니다.
-        </p>
+      <section className="pt-40 pb-20 px-6 text-center border-b border-white/10 relative overflow-hidden">
+        <Stars count={40} sparkleCount={4} />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">ABOUT</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+            스케치온을 소개합니다
+          </h1>
+          <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
+            스케치온은 교육과 영상제작이라는 두 가지 언어로,
+            <br className="hidden md:block" />
+            사람과 조직이 다음 장면으로 나아갈 수 있도록 돕는 회사입니다.
+          </p>
+        </div>
       </section>
 
       <section className="py-24 px-6 border-b border-white/10">
