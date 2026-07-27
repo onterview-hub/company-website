@@ -2,6 +2,12 @@
 
 import { useMemo } from "react";
 
+const TINTS = [
+  "255,255,255",
+  "180,210,255",
+  "255,200,230",
+];
+
 export default function Stars({
   count = 60,
   sparkleCount = 6,
@@ -25,9 +31,10 @@ export default function Stars({
       id: i,
       top: Math.random() * 100,
       left: Math.random() * 100,
-      size: Math.random() * 14 + 18,
-      duration: Math.random() * 2 + 3,
+      size: Math.random() * 14 + 16,
+      duration: Math.random() * 2.5 + 3.5,
       delay: Math.random() * 4,
+      tint: TINTS[i % TINTS.length],
     }));
   }, [sparkleCount]);
 
@@ -49,25 +56,44 @@ export default function Stars({
         />
       ))}
 
-      {/* 반짝이는 별(SVG) */}
+      {/* 반짝이는 별 (부드러운 방사형 광채) */}
       {sparkles.map((s) => (
-        <svg
+        <div
           key={`sparkle-${s.id}`}
-          viewBox="0 0 100 100"
           className="absolute"
           style={{
             top: `${s.top}%`,
             left: `${s.left}%`,
-            width: `${s.size}px`,
-            height: `${s.size}px`,
+            width: `${s.size * 5}px`,
+            height: `${s.size * 5}px`,
+            marginLeft: `-${(s.size * 5) / 2}px`,
+            marginTop: `-${(s.size * 5) / 2}px`,
             animation: `sketchon-sparkle ${s.duration}s ease-in-out ${s.delay}s infinite`,
           }}
         >
-          <path
-            d="M50 0 C53 35 65 47 100 50 C65 53 53 65 50 100 C47 65 35 53 0 50 C35 47 47 35 50 0 Z"
-            fill="white"
+          {/* 방사형 후광 */}
+          <div
+            className="absolute inset-0 rounded-full"
+            style={{
+              background: `radial-gradient(circle, rgba(${s.tint},0.55) 0%, rgba(${s.tint},0.15) 35%, transparent 70%)`,
+            }}
           />
-        </svg>
+          {/* 얇고 뾰족한 별 */}
+          <svg
+            viewBox="0 0 100 100"
+            className="absolute top-1/2 left-1/2"
+            style={{
+              width: `${s.size}px`,
+              height: `${s.size}px`,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <path
+              d="M50 0 C51.5 40 60 48.5 100 50 C60 51.5 51.5 60 50 100 C48.5 60 40 51.5 0 50 C40 48.5 48.5 40 50 0 Z"
+              fill={`rgba(${s.tint},1)`}
+            />
+          </svg>
+        </div>
       ))}
 
       <style jsx>{`
@@ -85,12 +111,12 @@ export default function Stars({
         @keyframes sketchon-sparkle {
           0%,
           100% {
-            opacity: 0.25;
-            transform: scale(0.6) rotate(0deg);
+            opacity: 0.4;
+            transform: scale(0.8);
           }
           50% {
             opacity: 1;
-            transform: scale(1.1) rotate(15deg);
+            transform: scale(1.1);
           }
         }
       `}</style>
