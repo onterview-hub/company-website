@@ -28,6 +28,24 @@ export default function Home() {
     "사내방송·IR 영상",
   ];
 
+  const references = [
+    {
+      slug: "sample-1",
+      category: "교육",
+      title: "가제) OO기업 AI 리터러시 교육",
+    },
+    {
+      slug: "sample-2",
+      category: "영상",
+      title: "가제) OO기관 브랜드 필름 제작",
+    },
+    {
+      slug: "sample-3",
+      category: "교육",
+      title: "가제) OO대학교 진로체험 프로그램",
+    },
+  ];
+
   return (
     <main className="bg-black text-white">
       <Header active="home" />
@@ -131,6 +149,42 @@ export default function Home() {
             className="inline-block text-amber-400 hover:underline"
           >
             영상제작서비스 자세히 보기 →
+          </Link>
+        </div>
+      </section>
+
+      {/* 레퍼런스 섹션 */}
+      <section id="reference" className="py-24 px-6 border-t border-white/10">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-amber-400 text-sm tracking-widest mb-3">
+            REFERENCE
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            스케치온의 발자취
+          </h2>
+          <p className="text-white/60 mb-12 max-w-2xl">
+            교육과 영상제작, 다양한 현장에서 쌓아온 스케치온의 프로젝트를
+            소개합니다.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {references.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/reference/${item.slug}`}
+                className="border border-white/10 rounded-2xl p-6 hover:border-amber-400/50 hover:bg-white/5 transition"
+              >
+                <span className="inline-block text-xs px-3 py-1 border border-amber-400/40 text-amber-400 rounded-full mb-4">
+                  {item.category}
+                </span>
+                <h3 className="font-bold">{item.title}</h3>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/reference"
+            className="inline-block text-amber-400 hover:underline"
+          >
+            레퍼런스 자세히 보기 →
           </Link>
         </div>
       </section>
