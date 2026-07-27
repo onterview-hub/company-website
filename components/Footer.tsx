@@ -9,6 +9,12 @@ export default function Footer() {
         </Link>
       </div>
       <p>© {new Date().getFullYear()} SKETCH ON. All rights reserved.</p>
+      <Link
+        href="/admin"
+        className="inline-block text-white/20 hover:text-white/50 transition text-xs"
+      >
+        admin
+      </Link>
     </footer>
   );
 }

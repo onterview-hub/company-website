@@ -11,6 +11,7 @@ type Notice = {
   id: number;
   title: string;
   content: string;
+  image_url: string | null;
   created_at: string;
 };
 
@@ -54,6 +55,13 @@ export default function NoticeDetailPage() {
               <p className="text-white/40 text-sm mb-10 pb-10 border-b border-white/10">
                 {new Date(notice.created_at).toLocaleDateString("ko-KR")}
               </p>
+              {notice.image_url && (
+                <img
+                  src={notice.image_url}
+                  alt={notice.title}
+                  className="w-full rounded-xl mb-8"
+                />
+              )}
               <p className="text-white/70 leading-relaxed whitespace-pre-line">
                 {notice.content}
               </p>

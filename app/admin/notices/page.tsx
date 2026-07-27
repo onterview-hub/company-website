@@ -10,6 +10,7 @@ type Notice = {
   id: number;
   title: string;
   content: string;
+  image_url: string | null;
   created_at: string;
 };
 
@@ -19,6 +20,8 @@ export default function AdminNoticesPage() {
   const [notices, setNotices] = useState<Notice[]>([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [existingImageUrl, setExistingImageUrl] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
 
@@ -49,6 +52,8 @@ export default function AdminNoticesPage() {
   const resetForm = () => {
     setTitle("");
     setContent("");
+    setImageFile(null);
+    setExistingImageUrl(null);
     setEditingId(null);
   };
 
@@ -56,13 +61,36 @@ export default function AdminNoticesPage() {
     e.preventDefault();
     setSaving(true);
 
+    let imageUrl = existingImageUrl;
+
+    if (imageFile) {
+      const fileExt = imageFile.name.split(".").pop();
+      const fileName = `${Date.now()}.${fileExt}`;
+      const { error: uploadError } = await supabase.storage
+        .from("notice-images")
+        .upload(fileName, imageFile);
+
+      if (uploadError) {
+        alert("이미지 업로드 실패: " + uploadError.message);
+        setSaving(false);
+        return;
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from("notice-images")
+        .getPublicUrl(fileName);
+      imageUrl = publicUrlData.publicUrl;
+    }
+
     if (editingId) {
       await supabase
         .from("notices")
-        .update({ title, content })
+        .update({ title, content, image_url: imageUrl })
         .eq("id", editingId);
     } else {
-      await supabase.from("notices").insert([{ title, content }]);
+      await supabase
+        .from("notices")
+        .insert([{ title, content, image_url: imageUrl }]);
     }
 
     resetForm();
@@ -74,6 +102,8 @@ export default function AdminNoticesPage() {
     setEditingId(notice.id);
     setTitle(notice.title);
     setContent(notice.content);
+    setExistingImageUrl(notice.image_url);
+    setImageFile(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -132,6 +162,35 @@ export default function AdminNoticesPage() {
               placeholder="내용"
               className="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 focus:border-amber-400 focus:outline-none transition resize-none"
             />
+
+            <div>
+              <label className="block text-sm text-white/60 mb-2">
+                이미지 첨부 (선택사항)
+              </label>
+              {existingImageUrl && !imageFile && (
+                <div className="mb-2 flex items-center gap-3">
+                  <img
+                    src={existingImageUrl}
+                    alt="현재 이미지"
+                    className="h-16 rounded"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setExistingImageUrl(null)}
+                    className="text-xs text-red-400 hover:underline"
+                  >
+                    이미지 제거
+                  </button>
+                </div>
+              )}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+                className="w-full text-sm text-white/70 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-amber-400 file:text-black file:font-semibold file:cursor-pointer"
+              />
+            </div>
+
             <div className="flex gap-3">
               <button
                 type="submit"
@@ -163,11 +222,20 @@ export default function AdminNoticesPage() {
                 key={n.id}
                 className="border border-white/10 rounded-xl p-5 flex items-center justify-between gap-4"
               >
-                <div>
-                  <p className="font-medium">{n.title}</p>
-                  <p className="text-white/40 text-sm">
-                    {new Date(n.created_at).toLocaleDateString("ko-KR")}
-                  </p>
+                <div className="flex items-center gap-4">
+                  {n.image_url && (
+                    <img
+                      src={n.image_url}
+                      alt=""
+                      className="w-14 h-14 object-cover rounded"
+                    />
+                  )}
+                  <div>
+                    <p className="font-medium">{n.title}</p>
+                    <p className="text-white/40 text-sm">
+                      {new Date(n.created_at).toLocaleDateString("ko-KR")}
+                    </p>
+                  </div>
                 </div>
                 <div className="flex gap-2 shrink-0">
                   <button
