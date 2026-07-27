@@ -7,6 +7,7 @@ const links = [
   { href: "/education", label: "교육서비스", key: "education" },
   { href: "/video", label: "영상제작서비스", key: "video" },
   { href: "/reference", label: "레퍼런스", key: "reference" },
+  { href: "/notice", label: "공지사항", key: "notice" },
   { href: "/about", label: "회사소개", key: "about" },
   { href: "/contact", label: "문의하기", key: "contact" },
 ];
@@ -25,7 +26,6 @@ export default function Header({ active }: { active?: string }) {
           SKETCH<span className="text-amber-400">ON</span>
         </Link>
 
-        {/* 데스크탑 메뉴 */}
         <nav className="hidden md:flex gap-8 text-sm text-white/80">
           {links.map((l) => (
             <Link
@@ -42,7 +42,6 @@ export default function Header({ active }: { active?: string }) {
           ))}
         </nav>
 
-        {/* 모바일 햄버거 버튼 */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-white p-2"
@@ -70,7 +69,6 @@ export default function Header({ active }: { active?: string }) {
         </button>
       </div>
 
-      {/* 모바일 드롭다운 메뉴 */}
       {open && (
         <nav className="md:hidden flex flex-col bg-black border-t border-white/10 px-6 py-4 gap-1">
           {links.map((l) => (
