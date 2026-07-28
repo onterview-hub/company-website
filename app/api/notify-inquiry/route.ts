@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { name, phone, email, message } = await request.json();
 
     await resend.emails.send({
-      from: "스케치온 홈페이지 <onboarding@resend.dev>",
+      from: "스케치온 홈페이지 <noreply@sketchon.kr>",
       to: process.env.NOTIFY_EMAIL as string,
       subject: `[스케치온] 새 문의: ${name}님`,
       text: `이름: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n문의내용:\n${message}`,
