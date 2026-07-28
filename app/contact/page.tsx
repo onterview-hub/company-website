@@ -39,10 +39,22 @@ export default function ContactPage() {
     if (error) {
       console.error(error);
       setStatus("error");
-    } else {
-      setStatus("success");
-      setForm({ name: "", phone: "", email: "", message: "" });
+      return;
     }
+
+    // 알림 메일 발송 (실패해도 문의 접수 자체는 성공 처리)
+    try {
+      await fetch("/api/notify-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (e) {
+      console.error("알림 메일 발송 실패:", e);
+    }
+
+    setStatus("success");
+    setForm({ name: "", phone: "", email: "", message: "" });
   };
 
   return (
