@@ -9,30 +9,15 @@ export const metadata = {
 };
 
 const references = [
-  {
-    slug: "sample-1",
-    category: "교육",
-    title: "가제) OO기업 AI 리터러시 교육",
-    summary: "추후 실제 프로젝트 내용으로 교체 예정입니다.",
-  },
-  {
-    slug: "sample-2",
-    category: "영상",
-    title: "가제) OO기관 브랜드 필름 제작",
-    summary: "추후 실제 프로젝트 내용으로 교체 예정입니다.",
-  },
-  {
-    slug: "sample-3",
-    category: "교육",
-    title: "가제) OO대학교 진로체험 프로그램",
-    summary: "추후 실제 프로젝트 내용으로 교체 예정입니다.",
-  },
-  {
-    slug: "sample-4",
-    category: "영상",
-    title: "가제) OO기업 사내 교육 영상 제작",
-    summary: "추후 실제 프로젝트 내용으로 교체 예정입니다.",
-  },
+  { slug: "sample-1", category: "교육", title: "OO기업 취업캠프", img: "job-camp,training" },
+  { slug: "sample-2", category: "교육", title: "OO기관 진로특강", img: "career-lecture,students" },
+  { slug: "sample-3", category: "교육", title: "OO기업 AI 리터러시 교육", img: "ai-classroom,training" },
+  { slug: "sample-4", category: "교육", title: "OO대학교 창업워크숍", img: "startup-workshop,team" },
+  { slug: "sample-5", category: "영상", title: "OO기관 홍보영상 제작", img: "promotional-video,camera" },
+  { slug: "sample-6", category: "영상", title: "OO기업 교육영상 제작", img: "video-production,studio" },
+  { slug: "sample-7", category: "교육", title: "OO대학교 진로체험 프로그램", img: "university,students" },
+  { slug: "sample-8", category: "교육", title: "OO기관 협업 프로젝트", img: "office-collaboration,meeting" },
+  { slug: "sample-9", category: "영상", title: "OO기관 현장실습 영상", img: "field-work,documentary" },
 ];
 
 export default function ReferencePage() {
@@ -51,24 +36,35 @@ export default function ReferencePage() {
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto">
             교육과 영상제작, 다양한 현장에서 쌓아온 스케치온의 프로젝트를
-            소개합니다.
+            소개합니다. (현재는 예시 데이터이며, 추후 실제 사례로 교체될
+            예정입니다)
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="py-20 px-6" style={{ perspective: "1200px" }}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {references.map((item) => (
             <Link
               key={item.slug}
               href={`/reference/${item.slug}`}
-              className="border border-white/10 rounded-2xl p-8 hover:border-amber-400/50 hover:bg-white/5 transition"
+              className="group [transform-style:preserve-3d] transition-transform duration-500 hover:[transform:rotateY(10deg)_rotateX(6deg)_scale(1.03)]"
             >
-              <span className="inline-block text-xs px-3 py-1 border border-amber-400/40 text-amber-400 rounded-full mb-4">
-                {item.category}
-              </span>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-white/50 text-sm">{item.summary}</p>
+              <div className="rounded-2xl overflow-hidden border border-white/10 group-hover:border-amber-400/60 transition shadow-lg group-hover:shadow-amber-400/10">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={`https://picsum.photos/seed/${item.slug}/800/600`}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5 bg-neutral-950">
+                  <span className="inline-block text-xs px-3 py-1 border border-amber-400/40 text-amber-400 rounded-full mb-3">
+                    {item.category}
+                  </span>
+                  <h3 className="font-bold">{item.title}</h3>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
