@@ -5,34 +5,37 @@ import Stars from "@/components/Stars";
 
 export default function Home() {
   const educationServices = [
-    { slug: "ai", title: "AI 교육", desc: "생성형 AI 실무 활용", img: "artificial-intelligence,technology" },
-    { slug: "career", title: "진로교육", desc: "자기이해와 방향 설계", img: "career,students" },
-    { slug: "employment", title: "취업역량 강화교육", desc: "이력서·면접 실전 훈련", img: "job-interview,office" },
-    { slug: "startup", title: "창업교육", desc: "아이디어를 사업으로", img: "startup,entrepreneur" },
-    { slug: "job-creation", title: "창직교육", desc: "새로운 직업 설계", img: "creative-work,idea" },
-    { slug: "corporate", title: "기업교육", desc: "조직 맞춤형 커리큘럼", img: "corporate-training,meeting" },
-    { slug: "mandatory", title: "법정의무교육", desc: "필수 이수교육 지원", img: "office-seminar,compliance" },
-    { slug: "leadership", title: "리더십·조직문화 교육", desc: "신뢰 기반 리더십", img: "leadership,teamwork" },
-    { slug: "career-experience", title: "진로체험 프로그램", desc: "현장 중심 체험", img: "students-workshop,learning" },
+    { slug: "ai", title: "AI 교육", desc: "생성형 AI 실무 활용", img: "1690079374922-7f50d5c1a102" },
+    { slug: "career", title: "진로교육", desc: "자기이해와 방향 설계", img: "1781331756173-386c128d6f92" },
+    { slug: "employment", title: "취업역량 강화교육", desc: "이력서·면접 실전 훈련", img: "1598978458053-d740c5aae5d6" },
+    { slug: "startup", title: "창업교육", desc: "아이디어를 사업으로", img: "1521737852567-6949f3f9f2b5" },
+    { slug: "job-creation", title: "창직교육", desc: "새로운 직업 설계", img: "1758873272412-7166447a94ae" },
+    { slug: "corporate", title: "기업교육", desc: "조직 맞춤형 커리큘럼", img: "1675434301763-594b4d0c5819" },
+    { slug: "mandatory", title: "법정의무교육", desc: "필수 이수교육 지원", img: "1781092176313-8b8b1e9927c7" },
+    { slug: "leadership", title: "리더십·조직문화 교육", desc: "신뢰 기반 리더십", img: "1758873268631-fa944fc5cad2" },
+    { slug: "career-experience", title: "진로체험 프로그램", desc: "현장 중심 체험", img: "1659080910507-bd9d7f3787f3" },
   ];
 
   const videoServices = [
-    { slug: "lecture", title: "강의 영상 제작", desc: "몰입도 높은 교육 콘텐츠", img: "online-lecture,studio" },
-    { slug: "event", title: "행사·홍보 영상", desc: "현장감 있는 브랜드 메시지", img: "conference,event" },
-    { slug: "field-experience", title: "체험·현장실습 영상", desc: "다큐형 현장 기록", img: "documentary,filming" },
-    { slug: "live", title: "라이브 스트리밍", desc: "안정적인 실시간 중계", img: "live-streaming,broadcast" },
-    { slug: "web-drama", title: "웹드라마", desc: "이야기로 전하는 메시지", img: "film-set,actors" },
-    { slug: "brand-film", title: "브랜드 필름", desc: "브랜드 철학의 영상화", img: "camera,cinematic" },
-    { slug: "interview-documentary", title: "인터뷰·다큐멘터리 영상", desc: "사람의 진짜 이야기", img: "interview,microphone" },
-    { slug: "social-content", title: "소셜미디어 콘텐츠 영상", desc: "짧고 강렬한 숏폼", img: "smartphone-video,content" },
-    { slug: "internal-ir", title: "사내방송·IR 영상", desc: "내부 소통과 신뢰 구축", img: "office-broadcast,presentation" },
+    { slug: "lecture", title: "강의 영상 제작", desc: "몰입도 높은 교육 콘텐츠", img: "1497015289639-54688650d173" },
+    { slug: "event", title: "행사·홍보 영상", desc: "현장감 있는 브랜드 메시지", img: "1612544409025-e1f6a56c1152" },
+    { slug: "field-experience", title: "체험·현장실습 영상", desc: "다큐형 현장 기록", img: "1632187989763-c9c620420b4d" },
+    { slug: "live", title: "라이브 스트리밍", desc: "안정적인 실시간 중계", img: "1574717024653-61fd2cf4d44d" },
+    { slug: "web-drama", title: "웹드라마", desc: "이야기로 전하는 메시지", img: "1485846234645-a62644f84728" },
+    { slug: "brand-film", title: "브랜드 필름", desc: "브랜드 철학의 영상화", img: "1553166272-e69910ab5ae1" },
+    { slug: "interview-documentary", title: "인터뷰·다큐멘터리 영상", desc: "사람의 진짜 이야기", img: "1577190651915-bf62d54d5b36" },
+    { slug: "social-content", title: "소셜미디어 콘텐츠 영상", desc: "짧고 강렬한 숏폼", img: "1528109966604-5a6a4a964e8d" },
+    { slug: "internal-ir", title: "사내방송·IR 영상", desc: "내부 소통과 신뢰 구축", img: "1625690303837-654c9666d2d0" },
   ];
 
   const references = [
-    { slug: "sample-1", category: "교육", title: "OO기업 AI 리터러시 교육", img: "ai-classroom,training" },
-    { slug: "sample-2", category: "영상", title: "OO기관 브랜드 필름 제작", img: "brand-video,production" },
-    { slug: "sample-3", category: "교육", title: "OO대학교 진로체험 프로그램", img: "university,students" },
+    { slug: "sample-1", category: "교육", title: "OO기업 AI 리터러시 교육", img: "1631486508786-db15cc28296e" },
+    { slug: "sample-2", category: "영상", title: "OO기관 브랜드 필름 제작", img: "1553166272-e69910ab5ae1" },
+    { slug: "sample-3", category: "교육", title: "OO대학교 진로체험 프로그램", img: "1781092176313-8b8b1e9927c7" },
   ];
+
+  const unsplash = (id: string) =>
+    `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
 
   return (
     <main className="bg-black text-white">
@@ -99,7 +102,7 @@ export default function Home() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={`https://picsum.photos/seed/${item.slug}/800/600`}
+                    src={unsplash(item.img)}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
@@ -144,7 +147,7 @@ export default function Home() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={`https://source.unsplash.com/800x600/?${item.img}`}
+                    src={unsplash(item.img)}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
@@ -194,7 +197,7 @@ export default function Home() {
                 <div className="rounded-2xl overflow-hidden border border-white/10 group-hover:border-amber-400/60 transition shadow-lg group-hover:shadow-amber-400/10">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      src={`https://source.unsplash.com/800x600/?${item.img}`}
+                      src={unsplash(item.img)}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
