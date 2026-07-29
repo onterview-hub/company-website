@@ -4,12 +4,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Stars from "@/components/Stars";
 
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`;
+
 const services = [
   {
     slug: "lecture",
     title: "강의 영상 제작",
     summary: "몰입도 높은 온라인 강의 콘텐츠를 만듭니다.",
-    img: "online-lecture,studio",
+    img: "1497015289639-54688650d173",
     description: [
       "온라인 교육의 완성도는 영상 퀄리티에서 갈립니다. 스케치온은 강사의 메시지가 명확하게 전달되도록 촬영 구성부터 편집, 자막까지 꼼꼼하게 제작합니다.",
       "단순 녹화가 아닌, 학습 몰입도를 높이는 시각 자료와 편집 기법을 함께 적용하며, 챕터 구성과 목차 삽입까지 교육 콘텐츠에 최적화된 방식으로 완성합니다.",
@@ -30,7 +33,7 @@ const services = [
     slug: "event",
     title: "행사·홍보 영상",
     summary: "행사의 순간을, 브랜드의 메시지로.",
-    img: "conference,event",
+    img: "1612544409025-e1f6a56c1152",
     description: [
       "행사는 순간이지만, 영상은 남습니다. 스케치온은 기업 행사, 세미나, 컨퍼런스의 현장감을 살리면서도 브랜드 메시지를 효과적으로 전달하는 영상을 제작합니다.",
       "현장 촬영부터 하이라이트 편집까지, 행사 목적에 맞는 최적의 결과물을 제공하며 SNS 확산용 클립까지 함께 준비합니다.",
@@ -51,7 +54,7 @@ const services = [
     slug: "field-experience",
     title: "체험·현장실습 영상",
     summary: "현장의 생생함을 그대로 담습니다.",
-    img: "documentary,filming",
+    img: "1632187989763-c9c620420b4d",
     description: [
       "현장실습이나 체험 프로그램의 가치는 그 생생함에 있습니다. 스케치온은 다큐멘터리 형식의 촬영 기법으로 현장의 분위기와 참여자의 변화를 진솔하게 담아냅니다.",
       "교육적 효과를 높이는 인터뷰 구성과 스토리텔링을 함께 적용하며, 성과 보고용 자료로도 활용 가능한 결과물을 제공합니다.",
@@ -72,7 +75,7 @@ const services = [
     slug: "live",
     title: "라이브 스트리밍",
     summary: "끊김 없는 실시간 중계, 전문 장비로.",
-    img: "live-streaming,broadcast",
+    img: "1574717024653-61fd2cf4d44d",
     description: [
       "실시간 방송은 안정성이 생명입니다. 스케치온은 전문 장비와 숙련된 인력으로 행사, 세미나, 온라인 발표회 등의 라이브 스트리밍을 안정적으로 지원합니다.",
       "유튜브, 자체 플랫폼 등 다양한 채널 송출을 지원하며, 다중 카메라 스위칭과 이중 백업 시스템으로 방송 사고를 예방합니다.",
@@ -93,7 +96,7 @@ const services = [
     slug: "web-drama",
     title: "웹드라마",
     summary: "브랜드 메시지를, 이야기로 전달합니다.",
-    img: "film-set,actors",
+    img: "1485846234645-a62644f84728",
     description: [
       "직접적인 광고보다 이야기가 더 오래 기억됩니다. 스케치온은 브랜드나 기관이 전하고 싶은 메시지를 자연스러운 스토리로 풀어내는 웹드라마를 기획·제작합니다.",
       "기획, 시나리오, 캐스팅, 촬영, 편집까지 전 과정을 원스톱으로 제공하며, 에피소드형 시리즈 구성도 가능합니다.",
@@ -114,7 +117,7 @@ const services = [
     slug: "brand-film",
     title: "브랜드 필름",
     summary: "브랜드의 정체성을, 영상으로 완성합니다.",
-    img: "camera,cinematic",
+    img: "1553166272-e69910ab5ae1",
     description: [
       "브랜드 필름은 단순 소개 영상이 아니라, 브랜드의 철학과 감성을 전달하는 작품입니다. 스케치온은 기업의 가치와 이야기를 감각적인 영상 언어로 표현합니다.",
       "기획 단계에서부터 브랜드의 톤앤매너를 깊이 이해하고, 이를 영상 전반에 일관되게 반영하며 다양한 러닝타임 버전으로 제작합니다.",
@@ -135,7 +138,7 @@ const services = [
     slug: "interview-documentary",
     title: "인터뷰·다큐멘터리 영상",
     summary: "사람과 이야기를, 깊이 있게 담아냅니다.",
-    img: "interview,microphone",
+    img: "1577190651915-bf62d54d5b36",
     description: [
       "가장 힘 있는 콘텐츠는 사람의 진짜 이야기입니다. 스케치온은 인물 인터뷰와 다큐멘터리 형식을 통해 깊이 있는 메시지를 전달하는 영상을 제작합니다.",
       "사전 인터뷰 구성부터 촬영, 편집까지 신뢰를 바탕으로 한 진솔한 결과물을 만듭니다.",
@@ -156,7 +159,7 @@ const services = [
     slug: "social-content",
     title: "소셜미디어 콘텐츠 영상",
     summary: "짧고 강렬하게, 채널에 맞게.",
-    img: "smartphone-video,content",
+    img: "1528109966604-5a6a4a964e8d",
     description: [
       "SNS는 짧은 시간 안에 메시지를 전달해야 합니다. 스케치온은 유튜브 쇼츠, 릴스, 틱톡 등 각 채널의 특성에 맞는 숏폼 콘텐츠를 기획·제작합니다.",
       "트렌드를 반영한 편집과 후킹 포인트 설계로 콘텐츠의 확산력을 높이며, 정기 콘텐츠 제작 패키지도 운영합니다.",
@@ -177,7 +180,7 @@ const services = [
     slug: "internal-ir",
     title: "사내방송·IR 영상",
     summary: "내부 소통과 투자자 신뢰를 위한 영상.",
-    img: "office-broadcast,presentation",
+    img: "1625690303837-654c9666d2d0",
     description: [
       "조직 내부의 소통과 외부 투자자와의 신뢰 구축, 모두 영상으로 더 효과적으로 전달할 수 있습니다. 스케치온은 사내방송 콘텐츠부터 IR용 기업 소개 영상까지 목적에 맞게 제작합니다.",
       "정확한 정보 전달과 신뢰감 있는 톤앤매너를 바탕으로 기획하며, 정기 사내방송 콘텐츠 운영도 지원합니다.",
@@ -244,7 +247,7 @@ export default async function VideoDetailPage({
         <div className="max-w-3xl mx-auto">
           <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video">
             <img
-              src={`https://picsum.photos/seed/${service.slug}/1200/675`}
+              src={unsplash(service.img)}
               alt={service.title}
               className="w-full h-full object-cover"
             />

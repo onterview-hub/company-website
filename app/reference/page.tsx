@@ -8,16 +8,19 @@ export const metadata = {
   description: "스케치온이 함께해온 교육 및 영상제작 프로젝트를 소개합니다.",
 };
 
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
+
 const references = [
-  { slug: "sample-1", category: "교육", title: "OO기업 취업캠프", img: "job-camp,training" },
-  { slug: "sample-2", category: "교육", title: "OO기관 진로특강", img: "career-lecture,students" },
-  { slug: "sample-3", category: "교육", title: "OO기업 AI 리터러시 교육", img: "ai-classroom,training" },
-  { slug: "sample-4", category: "교육", title: "OO대학교 창업워크숍", img: "startup-workshop,team" },
-  { slug: "sample-5", category: "영상", title: "OO기관 홍보영상 제작", img: "promotional-video,camera" },
-  { slug: "sample-6", category: "영상", title: "OO기업 교육영상 제작", img: "video-production,studio" },
-  { slug: "sample-7", category: "교육", title: "OO대학교 진로체험 프로그램", img: "university,students" },
-  { slug: "sample-8", category: "교육", title: "OO기관 협업 프로젝트", img: "office-collaboration,meeting" },
-  { slug: "sample-9", category: "영상", title: "OO기관 현장실습 영상", img: "field-work,documentary" },
+  { slug: "sample-1", category: "교육", title: "OO기업 취업캠프", img: "1598978458053-d740c5aae5d6" },
+  { slug: "sample-2", category: "교육", title: "OO기관 진로특강", img: "1781331756173-386c128d6f92" },
+  { slug: "sample-3", category: "교육", title: "OO기업 AI 리터러시 교육", img: "1690079374922-7f50d5c1a102" },
+  { slug: "sample-4", category: "교육", title: "OO대학교 창업워크숍", img: "1521737852567-6949f3f9f2b5" },
+  { slug: "sample-5", category: "영상", title: "OO기관 홍보영상 제작", img: "1612544409025-e1f6a56c1152" },
+  { slug: "sample-6", category: "영상", title: "OO기업 교육영상 제작", img: "1497015289639-54688650d173" },
+  { slug: "sample-7", category: "교육", title: "OO대학교 진로체험 프로그램", img: "1659080910507-bd9d7f3787f3" },
+  { slug: "sample-8", category: "교육", title: "OO기관 협업 프로젝트", img: "1675434301763-594b4d0c5819" },
+  { slug: "sample-9", category: "영상", title: "OO기관 현장실습 영상", img: "1632187989763-c9c620420b4d" },
 ];
 
 export default function ReferencePage() {
@@ -53,7 +56,7 @@ export default function ReferencePage() {
               <div className="rounded-2xl overflow-hidden border border-white/10 group-hover:border-amber-400/60 transition shadow-lg group-hover:shadow-amber-400/10">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={`https://picsum.photos/seed/${item.slug}/800/600`}
+                    src={unsplash(item.img)}
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />

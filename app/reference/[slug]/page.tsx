@@ -4,12 +4,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Stars from "@/components/Stars";
 
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`;
+
 const references = [
   {
     slug: "sample-1",
     category: "교육",
     title: "OO기업 취업캠프",
-    img: "job-camp,training",
+    img: "1598978458053-d740c5aae5d6",
     client: "OO기업",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -22,7 +25,7 @@ const references = [
     slug: "sample-2",
     category: "교육",
     title: "OO기관 진로특강",
-    img: "career-lecture,students",
+    img: "1781331756173-386c128d6f92",
     client: "OO기관",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -35,7 +38,7 @@ const references = [
     slug: "sample-3",
     category: "교육",
     title: "OO기업 AI 리터러시 교육",
-    img: "ai-classroom,training",
+    img: "1690079374922-7f50d5c1a102",
     client: "OO기업",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -48,7 +51,7 @@ const references = [
     slug: "sample-4",
     category: "교육",
     title: "OO대학교 창업워크숍",
-    img: "startup-workshop,team",
+    img: "1521737852567-6949f3f9f2b5",
     client: "OO대학교",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -61,7 +64,7 @@ const references = [
     slug: "sample-5",
     category: "영상",
     title: "OO기관 홍보영상 제작",
-    img: "promotional-video,camera",
+    img: "1612544409025-e1f6a56c1152",
     client: "OO기관",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -74,7 +77,7 @@ const references = [
     slug: "sample-6",
     category: "영상",
     title: "OO기업 교육영상 제작",
-    img: "video-production,studio",
+    img: "1497015289639-54688650d173",
     client: "OO기업",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -87,7 +90,7 @@ const references = [
     slug: "sample-7",
     category: "교육",
     title: "OO대학교 진로체험 프로그램",
-    img: "university,students",
+    img: "1659080910507-bd9d7f3787f3",
     client: "OO대학교",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -100,7 +103,7 @@ const references = [
     slug: "sample-8",
     category: "교육",
     title: "OO기관 협업 프로젝트",
-    img: "office-collaboration,meeting",
+    img: "1675434301763-594b4d0c5819",
     client: "OO기관",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -113,7 +116,7 @@ const references = [
     slug: "sample-9",
     category: "영상",
     title: "OO기관 현장실습 영상",
-    img: "field-work,documentary",
+    img: "1632187989763-c9c620420b4d",
     client: "OO기관",
     period: "2026.00 ~ 2026.00",
     description: [
@@ -172,7 +175,7 @@ export default async function ReferenceDetailPage({
         <div className="max-w-3xl mx-auto">
           <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video">
             <img
-              src={`https://picsum.photos/seed/${item.slug}/1200/675`}
+              src={unsplash(item.img)}
               alt={item.title}
               className="w-full h-full object-cover"
             />
