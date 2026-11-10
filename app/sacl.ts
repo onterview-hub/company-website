@@ -1,0 +1,440 @@
+// SACL(SKETCHON AI CAREER LAB) 48강 강의 데이터
+// 영상이 준비되면 해당 강의의 youtubeId에 유튜브 영상 ID만 넣으면 됩니다.
+// 예) https://www.youtube.com/watch?v=abcd1234XYZ  →  youtubeId: "abcd1234XYZ"
+
+export type SaclCourseKey = "career" | "job" | "startup" | "newjob" | "digital";
+
+export type SaclCourse = {
+  key: SaclCourseKey;
+  name: string;
+  count: number;
+};
+
+export type SaclLesson = {
+  no: number;
+  course: SaclCourseKey;
+  title: string;
+  summary: string;
+  output: string;
+  youtubeId: string;
+};
+
+export const saclProgram = {
+  name: "스케치온 AI CAREER LAB (SACL)",
+  subtitle: "SKETCHON AI CAREER LAB",
+  headline: "생성형 AI 기반 진로·취업·창업·창직 및 디지털 실무 역량 강화 교육",
+  info: [
+    { label: "교육 목적", value: "AI를 활용해 진로 탐색부터 취업 준비, 창업 아이디어 구체화, 새로운 직업 설계 및 실무 역량 강화까지 지원" },
+    { label: "교육 규모", value: "총 48강, 24시간 (강의당 30분)" },
+    { label: "교육 방식", value: "30분 단위 온라인 강의 영상과 AI 실습 프롬프트 및 결과물 작성 활동을 연계한 교육" },
+    { label: "교육 대상", value: "대학생, 졸업예정자, 취업준비생, 직업계고 학생 등" },
+    { label: "제안 대상 기관", value: "대학, 대학일자리플러스센터, 취업지원부서, 진로교육 담당 부서, 특성화고등학교 및 취업 중심 목적고등학교" },
+    { label: "활용 방식", value: "대학 비교과 프로그램, 진로·취업 교과 및 특강, 취업역량 강화 프로그램, 창업교육, 온라인 학습 콘텐츠 등" },
+    { label: "교육 결과물", value: "진로 로드맵, 자기소개서, 면접 답변, 취업 전략표, 사업계획서, 창직 실행계획, 업무 문서 등" },
+    { label: "제공 자료", value: "강의 영상, 실습용 프롬프트, 결과물 작성 양식, 학습 자료 등" },
+  ],
+};
+
+export const saclCourses: SaclCourse[] = [
+  { key: "career", name: "진로", count: 6 },
+  { key: "job", name: "취업", count: 18 },
+  { key: "startup", name: "창업", count: 8 },
+  { key: "newjob", name: "창직", count: 8 },
+  { key: "digital", name: "디지털 업무·회사생활", count: 8 },
+];
+
+export const saclLessons: SaclLesson[] = [
+  // ===== 진로 (1~6강) =====
+  {
+    no: 1,
+    course: "career",
+    title: "AI로 찾는 나의 강점과 진로 방향",
+    summary: "자기 경험·관심사·가치관 분석, AI를 활용한 강점 및 진로 적성 탐색",
+    output: "개인 진로 프로필",
+    youtubeId: "",
+  },
+  {
+    no: 2,
+    course: "career",
+    title: "AI와 함께하는 전공별 산업·직무 탐색",
+    summary: "전공 관련 산업·직무 조사, 관심 분야별 진출 경로와 직업 비교",
+    output: "전공 연계 직무 탐색표",
+    youtubeId: "",
+  },
+  {
+    no: 3,
+    course: "career",
+    title: "AI 시대의 직업 변화와 미래 역량 분석",
+    summary: "AI로 변화하는 산업·직업 사례 탐색, 미래 직무에 필요한 핵심 역량 분석",
+    output: "미래 역량 체크리스트",
+    youtubeId: "",
+  },
+  {
+    no: 4,
+    course: "career",
+    title: "AI 기반 개인별 커리어 로드맵 설계",
+    summary: "희망 직무에 필요한 경험·역량·자격 탐색, 단계별 진로 계획 수립",
+    output: "1년 커리어 로드맵",
+    youtubeId: "",
+  },
+  {
+    no: 5,
+    course: "career",
+    title: "AI로 비교하는 진로 선택과 대안 설계",
+    summary: "진로 대안별 적합성·성장 가능성·준비 기간 비교, 우선순위 설정",
+    output: "진로 대안 비교표",
+    youtubeId: "",
+  },
+  {
+    no: 6,
+    course: "career",
+    title: "AI 진로 상담으로 만드는 나만의 실행계획",
+    summary: "AI 진로 상담을 통한 목표 구체화, 진로 준비 과제와 실천 일정 설계",
+    output: "개인 진로 실행계획서",
+    youtubeId: "",
+  },
+
+  // ===== 취업 (7~24강) =====
+  {
+    no: 7,
+    course: "job",
+    title: "AI로 읽는 채용 트렌드와 목표 기업 찾기",
+    summary: "채용시장·산업 동향 조사, 관심 기업의 사업과 채용 정보 비교",
+    output: "목표 기업 리스트",
+    youtubeId: "",
+  },
+  {
+    no: 8,
+    course: "job",
+    title: "AI로 분석하는 채용공고와 직무 핵심 역량",
+    summary: "채용공고의 주요 업무·필수 역량·우대 조건 분석, 준비 항목 정리",
+    output: "채용공고 분석표",
+    youtubeId: "",
+  },
+  {
+    no: 9,
+    course: "job",
+    title: "AI 기반 취업 준비도 진단과 역량 보완 전략",
+    summary: "보유 역량과 직무 요구 역량 비교, 부족한 역량 및 준비 우선순위 도출",
+    output: "취업 준비도 및 역량 갭 분석표",
+    youtubeId: "",
+  },
+  {
+    no: 10,
+    course: "job",
+    title: "AI로 발굴하는 나의 경험과 직무 역량",
+    summary: "수업·프로젝트·아르바이트·대외활동 경험 정리, 직무 역량과 연결할 경험 선별",
+    output: "경험 자산 목록",
+    youtubeId: "",
+  },
+  {
+    no: 11,
+    course: "job",
+    title: "AI와 STAR 기법으로 완성하는 자기소개서",
+    summary: "경험을 상황·과제·행동·결과로 구조화, 자기소개서 문항별 초안 작성",
+    output: "STAR 경험 정리표 및 자기소개서 초안",
+    youtubeId: "",
+  },
+  {
+    no: 12,
+    course: "job",
+    title: "AI 기업 분석으로 완성하는 지원동기와 입사 후 포부",
+    summary: "기업의 사업·인재상·직무 특성 분석, 개인 경험과 연결한 지원동기 및 포부 작성",
+    output: "기업별 지원동기 초안",
+    youtubeId: "",
+  },
+  {
+    no: 13,
+    course: "job",
+    title: "AI 피드백으로 다듬는 자기소개서와 사실 검증",
+    summary: "문장·논리·직무 적합성 점검, 과장된 표현과 근거 없는 내용 검토",
+    output: "자기소개서 수정본",
+    youtubeId: "",
+  },
+  {
+    no: 14,
+    course: "job",
+    title: "AI로 완성하는 직무 맞춤형 이력서와 경력기술서",
+    summary: "활동·경험을 직무 역량 중심으로 정리, 역할과 성과가 드러나는 이력서 작성",
+    output: "직무 맞춤형 이력서",
+    youtubeId: "",
+  },
+  {
+    no: 15,
+    course: "job",
+    title: "AI로 기획하는 취업 포트폴리오와 프로젝트 성과 정리",
+    summary: "프로젝트의 목표·과정·역할·결과 정리, 지원 직무에 맞는 포트폴리오 구성",
+    output: "포트폴리오 구성안",
+    youtubeId: "",
+  },
+  {
+    no: 16,
+    course: "job",
+    title: "AI 피드백으로 완성하는 1분 자기소개",
+    summary: "지원 직무와 핵심 경험 선정, 1분 자기소개 작성 및 전달 내용 개선",
+    output: "1분 자기소개 대본",
+    youtubeId: "",
+  },
+  {
+    no: 17,
+    course: "job",
+    title: "AI 모의면접으로 준비하는 예상 질문과 꼬리질문",
+    summary: "자기소개서·채용공고 기반 예상 질문 생성, 답변 근거 및 추가 질문 대응 연습",
+    output: "예상 면접 질문·답변집",
+    youtubeId: "",
+  },
+  {
+    no: 18,
+    course: "job",
+    title: "AI 면접 코칭과 답변 개선 실습",
+    summary: "AI 면접관과 모의면접 진행, 답변의 구체성·논리성·직무 적합성 점검",
+    output: "면접 피드백 리포트",
+    youtubeId: "",
+  },
+  {
+    no: 19,
+    course: "job",
+    title: "AI로 연습하는 상황면접과 문제 해결 질문",
+    summary: "갈등·고객 대응·업무 우선순위 등 상황별 질문 연습, 문제 해결 과정과 판단 근거 정리",
+    output: "상황면접 답변 프레임",
+    youtubeId: "",
+  },
+  {
+    no: 20,
+    course: "job",
+    title: "AI를 활용한 PT 면접과 발표자료 구성",
+    summary: "면접 과제 분석, 주장·근거·대안·결론 구조화 및 발표 흐름 설계",
+    output: "PT 발표 구성안",
+    youtubeId: "",
+  },
+  {
+    no: 21,
+    course: "job",
+    title: "AI로 준비하는 토론면접과 논리적 의사표현",
+    summary: "토론 주제별 찬반 논거·예상 반론 분석, 근거 중심의 의견 제시와 조율 연습",
+    output: "토론 논거 및 반론 정리표",
+    youtubeId: "",
+  },
+  {
+    no: 22,
+    course: "job",
+    title: "AI로 세우는 공공기관·공기업·민간기업 취업 전략",
+    summary: "기업 유형별 채용 절차와 평가 요소 비교, 지원처에 맞는 준비 전략 수립",
+    output: "유형별 취업 전략표",
+    youtubeId: "",
+  },
+  {
+    no: 23,
+    course: "job",
+    title: "생성형 AI 취업 활용과 프롬프트 작성법",
+    summary: "취업 준비 단계별 프롬프트 작성, AI 답변의 오류·편향·표절·개인정보 위험 점검",
+    output: "취업 준비 프롬프트 모음",
+    youtubeId: "",
+  },
+  {
+    no: 24,
+    course: "job",
+    title: "AI로 분석하는 취업 준비 결과와 다음 지원 전략",
+    summary: "지원 현황·서류·면접 피드백 분석, 보완점과 다음 지원 일정 수립",
+    output: "지원 관리표 및 실행계획",
+    youtubeId: "",
+  },
+
+  // ===== 창업 (25~32강) =====
+  {
+    no: 25,
+    course: "startup",
+    title: "AI로 발굴하는 창업 아이템과 고객 문제",
+    summary: "일상·산업 현장의 불편과 고객 문제 탐색, 해결 가치가 있는 창업 아이템 도출",
+    output: "창업 아이템 후보 리스트",
+    youtubeId: "",
+  },
+  {
+    no: 26,
+    course: "startup",
+    title: "AI 시장조사와 경쟁사·고객 분석",
+    summary: "목표 고객과 시장 동향 조사, 경쟁사별 강점·약점 및 미충족 수요 비교",
+    output: "시장·경쟁 분석표",
+    youtubeId: "",
+  },
+  {
+    no: 27,
+    course: "startup",
+    title: "AI로 설계하는 고객 페르소나와 비즈니스 모델",
+    summary: "핵심 고객과 구매 이유 정의, 가치 제안·수익 구조·핵심 활동 설계",
+    output: "고객 페르소나 및 비즈니스 모델",
+    youtubeId: "",
+  },
+  {
+    no: 28,
+    course: "startup",
+    title: "AI로 검증하는 창업 아이디어와 MVP 기획",
+    summary: "창업 가설과 고객 검증 질문 설정, 최소 기능 제품(MVP) 및 검증 방법 설계",
+    output: "MVP 기획서",
+    youtubeId: "",
+  },
+  {
+    no: 29,
+    course: "startup",
+    title: "AI와 함께 작성하는 사업계획서",
+    summary: "문제·해결책·시장·수익모델·실행계획 구성, 사업 가정과 근거 검토",
+    output: "사업계획서 초안",
+    youtubeId: "",
+  },
+  {
+    no: 30,
+    course: "startup",
+    title: "AI로 분석하는 가격 전략과 창업 손익 계산",
+    summary: "가격·판매량·비용 가정 설정, 예상 매출·손익분기점·수익성 시나리오 비교",
+    output: "기초 손익 시뮬레이션표",
+    youtubeId: "",
+  },
+  {
+    no: 31,
+    course: "startup",
+    title: "AI 브랜딩과 창업 홍보 콘텐츠 제작",
+    summary: "브랜드 콘셉트와 차별화 메시지 설정, 고객 유형별 홍보 문구 및 콘텐츠 제작",
+    output: "브랜드 메시지 및 홍보 콘텐츠 시안",
+    youtubeId: "",
+  },
+  {
+    no: 32,
+    course: "startup",
+    title: "AI로 준비하는 창업 발표와 사업 아이디어 피칭",
+    summary: "사업의 문제·해결책·시장성·실행 가능성 구성, 발표자료와 예상 질문 준비",
+    output: "피칭 자료 구성안 및 예상 질문",
+    youtubeId: "",
+  },
+
+  // ===== 창직 (33~40강) =====
+  {
+    no: 33,
+    course: "newjob",
+    title: "AI 시대의 신직업과 새로운 일자리 기회 탐색",
+    summary: "산업·기술 변화에 따른 신규 직무 탐색, 새롭게 생기는 직업 기회 발굴",
+    output: "신직업 탐색 목록",
+    youtubeId: "",
+  },
+  {
+    no: 34,
+    course: "newjob",
+    title: "AI로 발견하는 나만의 창직 아이디어",
+    summary: "개인의 경험·관심·역량 분석, 기존 직무의 확장과 새로운 직업 아이디어 도출",
+    output: "창직 아이디어 카드",
+    youtubeId: "",
+  },
+  {
+    no: 35,
+    course: "newjob",
+    title: "AI로 설계하는 고객 문제 해결형 신직업",
+    summary: "특정 고객의 문제 정의, 기존 서비스의 빈틈을 해결하는 직업 역할과 제공 가치 설계",
+    output: "신직업 콘셉트 시트",
+    youtubeId: "",
+  },
+  {
+    no: 36,
+    course: "newjob",
+    title: "AI로 만드는 직무 융합과 전문성 차별화 전략",
+    summary: "서로 다른 산업·직무 역량의 결합, 차별화된 전문 분야와 핵심 서비스 설정",
+    output: "직무 융합 및 포지셔닝 맵",
+    youtubeId: "",
+  },
+  {
+    no: 37,
+    course: "newjob",
+    title: "AI 기반 신직업 서비스와 수익모델 설계",
+    summary: "신직업의 서비스 내용·고객·운영 방식·가격 설정, 수익 구조와 실현 가능성 검토",
+    output: "서비스 및 수익모델 설계서",
+    youtubeId: "",
+  },
+  {
+    no: 38,
+    course: "newjob",
+    title: "AI로 만드는 신직업 서비스 시제품과 검증",
+    summary: "AI 도구를 활용한 서비스 샘플 제작, 고객 관점의 사용성 및 개선점 검토",
+    output: "서비스 시제품 또는 샘플",
+    youtubeId: "",
+  },
+  {
+    no: 39,
+    course: "newjob",
+    title: "AI 시대의 신직업 포트폴리오와 개인 브랜딩",
+    summary: "신직업의 역할·전문성·제공 가치를 정리하고, 사례와 결과물 중심의 포트폴리오 구성",
+    output: "신직업 포트폴리오 초안",
+    youtubeId: "",
+  },
+  {
+    no: 40,
+    course: "newjob",
+    title: "AI로 수립하는 창직 실행계획과 시장 진입 전략",
+    summary: "필요 역량·활용 도구·고객 확보 방법 정리, 단계별 실행 과제와 시장 진입 계획 수립",
+    output: "창직 실행 로드맵",
+    youtubeId: "",
+  },
+
+  // ===== 디지털 업무 역량·슬기로운 회사생활 (41~48강) =====
+  {
+    no: 41,
+    course: "digital",
+    title: "AI 도구를 활용한 스마트 업무환경 만들기",
+    summary: "업무 목적별 AI 도구 탐색, 정보 수집·정리·기록·협업에 적합한 활용 방식 설계",
+    output: "개인 업무 도구 활용 맵",
+    youtubeId: "",
+  },
+  {
+    no: 42,
+    course: "digital",
+    title: "AI로 작성하는 보고서·기획서와 업무 문서",
+    summary: "문서 목적과 독자 설정, 보고서·기획서 개요 및 초안 작성과 논리 점검",
+    output: "업무 문서 템플릿",
+    youtubeId: "",
+  },
+  {
+    no: 43,
+    course: "digital",
+    title: "AI와 함께하는 엑셀 데이터 분석과 업무 자동화",
+    summary: "표 데이터 정리·요약·분석, 반복 업무를 줄이는 수식 및 자동화 방법 탐색",
+    output: "데이터 분석 예제 및 자동화 설계안",
+    youtubeId: "",
+  },
+  {
+    no: 44,
+    course: "digital",
+    title: "AI로 정리하는 회의록과 업무 커뮤니케이션",
+    summary: "회의 내용의 핵심·결정 사항·담당자·기한 정리, 이메일과 업무 메시지 작성",
+    output: "회의록 및 업무 메시지 템플릿",
+    youtubeId: "",
+  },
+  {
+    no: 45,
+    course: "digital",
+    title: "AI 기반 프로젝트 관리와 업무 우선순위 설정",
+    summary: "업무 세분화와 일정 관리, 중요도·긴급도·업무 간 의존 관계를 반영한 실행계획 수립",
+    output: "프로젝트 업무 관리표",
+    youtubeId: "",
+  },
+  {
+    no: 46,
+    course: "digital",
+    title: "AI를 활용한 업무 문제 해결과 의사결정",
+    summary: "업무 문제의 원인과 대안 탐색, 근거·비용·기대 효과 비교 및 의사결정 연습",
+    output: "문제 해결 의사결정표",
+    youtubeId: "",
+  },
+  {
+    no: 47,
+    course: "digital",
+    title: "AI로 연습하는 직장 내 소통과 갈등 대응",
+    summary: "직장 내 요청·피드백·갈등 상황 시뮬레이션, 상황별 표현 및 대응 방식 연습",
+    output: "상황별 커뮤니케이션 문장집",
+    youtubeId: "",
+  },
+  {
+    no: 48,
+    course: "digital",
+    title: "AI 업무 활용의 윤리·보안·개인정보 보호",
+    summary: "업무상 개인정보·기밀정보·저작권 보호, AI 답변의 오류와 사실관계 검증 방법",
+    output: "안전한 AI 업무 활용 체크리스트",
+    youtubeId: "",
+  },
+];
